@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JitneyLogic | Revenue Operations Infrastructure</title>
+    <style>
+        :root {
+            --jitney-purple: hsl(259, 30%, 42%);
+            --jitney-purple-hover: hsl(259, 30%, 32%);
+            --linen-bg: #F4F2EC; 
+            --stark-white: #FFFFFF;
+            --slate-charcoal: #1B291F; 
+            --sage-green: #4C9170;
+            --gold-accent: #d97706;
+            --border-width: 3px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--linen-bg);
+            font-family: system-ui, -apple-system, sans-serif;
+            color: var(--slate-charcoal);
+            line-height: 1.6;
+        }
+
+        /* BRAND HEADER */
+        .brand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 5%;
+            border-bottom: var(--border-width) solid var(--slate-charcoal);
+            background-color: var(--stark-white);
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* NAV BUTTON (Restored 3-Stage Tactile Hover) */
+        .nav-btn {
+            background-color: var(--stark-white);
+            color: var(--slate-charcoal);
+            text-decoration: none;
+            border: 2px solid var(--slate-charcoal);
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            box-shadow: 8px 8px 0px var(--slate-charcoal);
+            transition: all 0.1s ease-in-out;
+            text-transform: uppercase;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: inline-block;
+        }
+        
+        .nav-btn:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0px var(--slate-charcoal);
+            background-color: var(--jitney-purple);
+            color: var(--stark-white);
+        }
+
+        .nav-btn:active {
+            transform: translate(8px, 8px);
+            box-shadow: 0px 0px 0px var(--slate-charcoal);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pill {
+            display: inline-block; 
+            padding: 6px 12px; 
+            border: 2px solid var(--slate-charcoal);
+            background-color: var(--stark-white); 
+            font-weight: 800; 
+            font-size: 0.85rem;
+            text-transform: uppercase; 
+            margin-bottom: 24px; 
+            box-shadow: 3px 3px 0px var(--slate-charcoal);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 500;
+            max-width: 800px;
+            margin-bottom: 40px;
+            color: #3f3f46;
+        }
+
+        /* BUTTON GROUP */
+        .button-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* MAIN BUTTONS (Restored 3-Stage Tactile Hover) */
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: var(--border-width) solid var(--slate-charcoal);
+            box-shadow: 8px 8px 0px var(--slate-charcoal);
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0px var(--slate-charcoal);
+        }
+
+        .btn:active {
+            transform: translate(8px, 8px);
+            box-shadow: 0px 0px 0px var(--slate-charcoal);
+        }
+
+        .btn-purple {
+            background-color: var(--jitney-purple);
+            color: var(--stark-white);
+        }
+        .btn-purple:hover { 
+            background-color: var(--jitney-purple-hover); 
+        }
+
+        .btn-green {
+            background-color: var(--sage-green);
+            color: var(--stark-white);
+        }
+        .btn-green:hover { 
+            background-color: var(--gold-accent); 
+            color: var(--slate-charcoal); 
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            background-color: var(--stark-white);
+            border-top: var(--border-width) solid var(--slate-charcoal);
+            padding: 60px 5%;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            border: var(--border-width) solid var(--slate-charcoal);
+            padding: 30px;
+            background-color: var(--linen-bg);
+            box-shadow: 8px 8px 0px var(--slate-charcoal);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 5%;
+            text-align: center;
+            font-family: ui-monospace, monospace;
+            font-size: 0.9rem;
+            color: var(--slate-charcoal);
+        }
+
+        @media (max-width: 768px) {
+            .button-group { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="brand-header">
+        <span>JITNEYLOGIC // ROOT</span>
+        <a href="https://demo.jitneylogic.com/friction.html" class="nav-btn">Run Terminal</a>
+    </div>
+
+    <section class="hero">
+        <div class="pill">RevOps Infrastructure</div>
+        <h1>SALES REPS ARE DROWNING.<br>MANAGEMENT IS LOOKING BACKWARD.</h1>
+        <p>Currently, reps are forced to juggle multiple software tabs and guess at pricing mid-call, while executives manage their floors backward relying on stale, delayed data exports. JitneyLogic is the lightweight RevOps overlay that fixes it.</p>
+        
+        <div class="button-group">
+            <a href="https://demo.jitneylogic.com" class="btn btn-purple">Watch The System Run</a>
+            <a href="#" class="btn btn-green" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tyler-jitneylogic'});return false;">Schedule Technical Fit</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <h3>Closer Cockpit</h3>
+                <p>A single window where scripts and pricing live, so reps can focus 100% of their cognitive bandwidth on the customer instead of fighting clunky CRM systems.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Live Leaderboards</h3>
+                <p>Intraday momentum tracking so managers can course-correct and throw out SPIFFs in real-time instead of acting as data clerks for stale spreadsheets.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Automated Culture</h3>
+                <p>Live floor notifications when a sale logs to drive dopamine, gamification, and striving. A high-status leaderboard that builds an elite sales culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 JitneyLogic Ltd. Co.
+    </footer>
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</body>
+</html>
